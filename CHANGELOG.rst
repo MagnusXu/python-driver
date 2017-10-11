@@ -29,6 +29,7 @@ Features
 * Include hash of result set metadata in prepared stmt id (PYTHON-808)
 * Add NO_COMPACT startup option (PYTHON-839)
 * Add new exception type for CDC (PYTHON-837)
+* Create an utility function to fetch concurrently many keys from the same replica (PYTHON-647)
 
 Bug Fixes
 ---------
