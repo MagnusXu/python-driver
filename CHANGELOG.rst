@@ -14,6 +14,7 @@ Bug Fixes
 Other
 -----
 * cqlengine: avoid warning when unregistering connection on shutdown (PYTHON-865)
+* Remove "Experimental" tag from execution profiles documentation (PYTHON-840)
 
 3.12.0
 ======
