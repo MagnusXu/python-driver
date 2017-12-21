@@ -14,6 +14,7 @@ Bug Fixes
 Other
 -----
 * cqlengine: avoid warning when unregistering connection on shutdown (PYTHON-865)
+* request_timer metrics descriptions are slightly incorrect (PYTHON-885)
 
 3.12.0
 ======
