@@ -17,6 +17,7 @@ Other
 * cqlengine: disallow Counter create, save operations (PYTHON-497)
 * cqlengine: remove the negative indices slicing support in ModelQuerySet (PYTHON-875)
 * PreparedStatement.column_metadata should be renamed to bind_metadata (PYTHON-884)
+* Setting the keyspace in Simplestatement with protocol versions prior to V5 (PYTHON-886)
 
 3.12.0
 ======

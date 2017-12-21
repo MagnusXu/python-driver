@@ -10,7 +10,11 @@ Upgrading to 4.0
 Execution API Updates
 ^^^^^^^^^^^^^^^^^^^^^
 :attr:`~.PreparedStatement.column_metadata` is renamed to :attr:`~.PreparedStatement.bind_metadata`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Setting :attr:`~.SimpleStatement.keyspace` when using a protocol version smaller than 5 will raise an :class:`~.UnsupportedOperation`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Before this operation had no effect, due to this, to avoid confusion, an exception will be risen when this happens.
 
 
 Upgrading to 3.0

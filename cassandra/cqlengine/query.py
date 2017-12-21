@@ -1655,7 +1655,6 @@ def _execute_statement_async(model, statement, consistency_level, timeout, conne
         if not any(v is None for v in key_values):
             parts = model._routing_key_from_values(key_values, conn.get_cluster(connection).protocol_version)
             s.routing_key = parts
-            s.keyspace = model._get_keyspace()
     connection = connection or model._get_connection()
     response_future = conn.execute_async(s, params, timeout=timeout, connection=connection)
 

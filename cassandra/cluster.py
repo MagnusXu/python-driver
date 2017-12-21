@@ -42,7 +42,8 @@ except ImportError:
 
 from cassandra import (ConsistencyLevel, AuthenticationFailed,
                        OperationTimedOut, SchemaTargetType,
-                       DriverException, ProtocolVersion)
+                       DriverException, ProtocolVersion,
+                       UnsupportedOperation)
 from cassandra.connection import (ConnectionException, ConnectionShutdown,
                                   ConnectionHeartbeat, ProtocolVersionUnsupported)
 from cassandra.cqltypes import UserType
@@ -2053,7 +2054,10 @@ class Session(object):
 
         if isinstance(query, SimpleStatement):
             query_string = query.query_string
-            statement_keyspace = query.keyspace if ProtocolVersion.uses_keyspace_flag(self._protocol_version) else None
+            if query.keyspace and not ProtocolVersion.uses_keyspace_flag(self._protocol_version):
+                raise UnsupportedOperation("Setting the keyspace to SimpleStatement can only "
+                                           "be used with protocol version 5 or higher")
+            statement_keyspace = query.keyspace
             if parameters:
                 query_string = bind_params(query_string, parameters, self.encoder)
             message = QueryMessage(
