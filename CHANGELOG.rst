@@ -14,6 +14,7 @@ Bug Fixes
 Other
 -----
 * cqlengine: avoid warning when unregistering connection on shutdown (PYTHON-865)
+* Remove copyright dates from copyright notices (PYTHON-863)
 
 3.12.0
 ======
